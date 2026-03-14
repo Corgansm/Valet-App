@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <title>Valet</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,600;1,9..40,400&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="app">
+    <header class="header">
+      <div class="search-row">
+        <input
+          type="search"
+          class="search-input"
+          placeholder="Ticket #, name, plate, make…"
+          aria-label="Search by ticket number, name, license plate, or make"
+        />
+        <div class="sort-wrap">
+          <button type="button" class="sort-trigger" aria-label="Sort" aria-expanded="false" aria-haspopup="true">
+            <span class="sort-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 15l5-5 5 5M7 9l5 5 5-5"/></svg>
+            </span>
+          </button>
+          <div class="sort-dropdown" role="menu" hidden>
+            <button type="button" role="menuitem" data-sort="arrival-asc">Arrival Time (Asc)</button>
+            <button type="button" role="menuitem" data-sort="arrival-desc">Arrival Time (Desc)</button>
+            <button type="button" role="menuitem" data-sort="ticket-asc">Ticket Number (Asc)</button>
+            <button type="button" role="menuitem" data-sort="ticket-desc">Ticket Number (Desc)</button>
+          </div>
+        </div>
+      </div>
+      <div class="filter-row">
+        <select class="status-filter" aria-label="Filter by status">
+          <option value="all">All Vehicles</option>
+          <option value="Parked">Parked</option>
+          <option value="Requested">Requested</option>
+          <option value="Retrieving">Retrieving</option>
+          <option value="Retrieved">Retrieved</option>
+          <option value="Out">Out</option>
+        </select>
+      </div>
+      <p class="filter-label" aria-live="polite">Showing: <strong id="filter-display">All Vehicles</strong></p>
+    </header>
+
+    <main class="main">
+      <div id="vehicle-list" class="vehicle-list" role="list">
+        <!-- Filled by JS -->
+      </div>
+      <div id="empty-state" class="empty-state" hidden>
+        <p>No vehicles match your search or filter.</p>
+      </div>
+    </main>
+
+    <button type="button" class="fab" aria-label="Add vehicle or main action">
+      <span class="fab-icon" aria-hidden="true">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M5 17h14v-5H5v5zM5 12V7h14v5"/>
+          <circle cx="7.5" cy="16.5" r="1.5"/>
+          <circle cx="16.5" cy="16.5" r="1.5"/>
+        </svg>
+      </span>
+    </button>
+  </div>
+  <script src="app.js"></script>
+</body>
+</html>

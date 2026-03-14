@@ -1,0 +1,24 @@
+{
+  "expo": {
+    "name": "Valet",
+    "slug": "valet-app",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "userInterfaceStyle": "automatic",
+    "ios": {
+      "supportsTablet": true,
+      "bundleIdentifier": "com.yourcompany.valetapp"
+    },
+    "android": {
+      "package": "com.yourcompany.valetapp"
+    },
+    "extra": {
+      "eas": {
+        "projectId": "your-project-id"
+      }
+    },
+    "plugins": [
+      "expo-asset"
+    ]
+  }
+}
